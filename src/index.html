@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-blog"></i>
+                    <h1>Posts Manager</h1>
+                </div>
+                <button id="addPostBtn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add Post
+                </button>
+            </div>
+            <div class="header-decoration"></div>
+        </header>
+
+        <div class="controls-container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search posts by title...">
+                <button id="searchBtn" class="btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="sort-container">
+                <select id="sortField" class="select-input">
+                    <option value="id">Sort by ID</option>
+                    <option value="title">Sort by Title</option>
+                </select>
+                <select id="sortOrder" class="select-input">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                <select id="postCount" class="select-input">
+                    <option value="5">5 posts per page</option>
+                    <option value="10">10 posts per page</option>
+                    <option value="20">20 posts per page</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="posts-container">
+            <div id="postsList" class="posts-list">
+                <!-- Posts will be inserted here -->
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevPage" class="btn">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <div class="page-numbers">
+                <!-- Page numbers will be inserted here -->
+            </div>
+            <div class="page-jump">
+                <input type="number" id="pageInput" min="1" placeholder="Page">
+                <button id="goToPage" class="btn">Go</button>
+            </div>
+            <button id="nextPage" class="btn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>2540126430 - Valentinus Gilbert Sanjaya</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for adding new post -->
+    <div id="addPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Post</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="addPostForm">
+                <div class="form-group">
+                    <label for="postTitle">Title</label>
+                    <input type="text" id="postTitle" required>
+                    <span class="error-message" id="titleError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="postBody">Body</label>
+                    <textarea id="postBody" required></textarea>
+                    <span class="error-message" id="bodyError"></span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
